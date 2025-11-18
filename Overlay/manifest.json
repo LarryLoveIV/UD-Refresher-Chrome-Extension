@@ -1,0 +1,51 @@
+{
+	"manifest_version": 3,
+	
+	"name": "UDOverlay",
+	
+	"version": "1.3",
+	
+	"description": "Uses fantasy data from a Google Sheet to overlay underdog drafts for sharper in-draft strategy.",
+	
+	"permissions": [
+	"storage"
+	],
+	
+	"background": {
+	"service_worker": "background.js"
+	},
+	
+	"action": {
+	"default_popup": "popup.html",
+	"default_title": "GARY BR"
+	},
+  
+	"icons": {
+	  "16": "icons/icon16.png",
+	  "48": "icons/icon48.png",
+	  "128": "icons/icon128.png"
+	},
+	
+	"action": {
+	  "default_popup": "popup.html",
+	  "default_title": "UDOverlay",
+	  "default_icon": {
+		"16": "icons/icon16.png",
+		"48": "icons/icon48.png",
+		"128": "icons/icon128.png"
+	  }
+	},
+
+	"content_scripts": [
+	{
+	  "matches": ["https://app.underdogfantasy.com/*"],
+	  "js": ["content.js"]
+	}
+	],
+	
+  "host_permissions": [
+  	"https://ud-data-refresher-487662280539.us-east5.run.app/*",
+    "https://app.underdogfantasy.com/*",
+    "https://sheets.googleapis.com/*"
+  ]
+}
