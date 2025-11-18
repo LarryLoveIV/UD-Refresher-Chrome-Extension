@@ -4,7 +4,7 @@
 const CONFIG = {
   SHEET_ID: '18CdAlA9Aq3aEARwZoB8LkCdycwKU0qr48OwbafZ1lhU',
   API_KEY: 'AIzaSyBgL1yfIeHxCEOd9B4EihmoL8EWzpR7rtM',
-  RANGE: 'Sheet1!A:Q',
+  RANGE: 'Sheet1!A:P',
   CLOUD_RUN_URL: 'https://ud-data-refresher-487662280539.us-east5.run.app' // replace with your Cloud Run endpoint
 };
 
@@ -33,9 +33,9 @@ async function fetchSheetData() {
     // Column indexes (0-based)
     const playerIdx = 0;   // Column A
     const impliedIdx = 1;  // Column B
-    const dsprojIdx = 12;  // Column M
-    const sznIdx = 13;     // Column N
-    const l4Idx = 14;      // Column O
+    const dsprojIdx = 13;  // Column M
+    const sznIdx = 14;     // Column N
+    const l4Idx = 15;      // Column O
 
     const playerData = {};
 
