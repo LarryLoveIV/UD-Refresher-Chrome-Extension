@@ -2,7 +2,7 @@ const statusEl = document.getElementById("status");
 const lastUpdatedEl = document.getElementById("last-updated");
 
 // 🔥 Your Cloud Run endpoint that returns { lastFinished: "ISO_DATE" }
-const STATUS_URL = "https://ud-data-refresher-487662280539.us-east5.run.app";
+const STATUS_URL = "https://YOUR_CLOUD_RUN_URL/status";
 
 // Fetch timestamp from Cloud Run -> Firestore
 async function fetchLastUpdated() {
@@ -36,4 +36,9 @@ document.getElementById("refresh").addEventListener("click", async () => {
       return;
     }
 
-    statusEl.textContent = response?.status
+    statusEl.textContent = response?.status || "Fantasy update triggered!";
+
+    // After the Cloud Run script finishes, pull the new timestamp
+    setTimeout(fetchLastUpdated, 2000);
+  });
+});
