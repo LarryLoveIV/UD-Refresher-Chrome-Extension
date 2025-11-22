@@ -1,8 +1,8 @@
 const statusEl = document.getElementById("status");
 const lastUpdatedEl = document.getElementById("last-updated");
 
-// 🔥 Your Cloud Run endpoint that returns { lastFinished: "ISO_DATE" }
-const STATUS_URL = "https://YOUR_CLOUD_RUN_URL/status";
+// Your Cloud Run endpoint that returns { lastFinished: "ISO_DATE" }
+const STATUS_URL = "https://ud-data-refresher-487662280539.us-east5.run.app/status";
 
 // Fetch timestamp from Cloud Run -> Firestore
 async function fetchLastUpdated() {
