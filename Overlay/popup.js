@@ -36,4 +36,4 @@ document.getElementById("refresh").addEventListener("click", async () => {
       return;
     }
 
-    statusEl.textContent = response?.statu
+    statusEl.textContent = response?.status
